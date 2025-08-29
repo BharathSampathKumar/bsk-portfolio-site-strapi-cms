@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_metadata_content_tags",
+  "info": {
+    "displayName": "Content Tag"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 20,
+      "required": true,
+      "unique": false
+    }
+  },
+  "config": {}
+}

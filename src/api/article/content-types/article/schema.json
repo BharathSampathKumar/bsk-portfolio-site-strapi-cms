@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 25,
+      "maxLength": 50,
+      "required": true
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor.CKEditor",
+      "options": {
+        "output": "HTML",
+        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NTc1NDg3OTksImp0aSI6IjFlNzFhZGYxLTZkODEtNGI4ZS1hNGIxLTgwN2E3OTI0NWNlMyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjQ5N2NiOGVmIn0.TpIDAECZFVc9uly-ia-gct7R80CS1sUb75aiaf8x9LRSUoDHSxM10yt8L8lB4nH2PEbwHR6BMLcytyljCyB_pA",
+        "preset": "standard"
+      }
+    },
+    "breadcrumbText": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50,
+      "required": true
+    },
+    "shortDesc": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 70,
+      "required": true
+    },
+    "fullDesc": {
+      "type": "text",
+      "minLength": 30,
+      "maxLength": 150,
+      "required": true
+    },
+    "isPublished": {
+      "type": "boolean"
+    },
+    "publishedOn": {
+      "type": "date",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "isPublished"
+            },
+            true
+          ]
+        }
+      },
+      "required": true
+    },
+    "Metadata": {
+      "type": "component",
+      "component": "seo.page-metadata",
+      "repeatable": false,
+      "min": 0
+    },
+    "Tag": {
+      "type": "component",
+      "component": "metadata.content-tag",
+      "repeatable": true
+    }
+  }
+}
