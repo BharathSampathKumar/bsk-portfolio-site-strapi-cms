@@ -17,15 +17,6 @@
       "maxLength": 50,
       "required": true
     },
-    "content": {
-      "type": "customField",
-      "customField": "plugin::ckeditor.CKEditor",
-      "options": {
-        "output": "HTML",
-        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NTc1NDg3OTksImp0aSI6IjFlNzFhZGYxLTZkODEtNGI4ZS1hNGIxLTgwN2E3OTI0NWNlMyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjQ5N2NiOGVmIn0.TpIDAECZFVc9uly-ia-gct7R80CS1sUb75aiaf8x9LRSUoDHSxM10yt8L8lB4nH2PEbwHR6BMLcytyljCyB_pA",
-        "preset": "standard"
-      }
-    },
     "breadcrumbText": {
       "type": "string",
       "minLength": 3,
@@ -71,6 +62,19 @@
       "type": "component",
       "component": "metadata.content-tag",
       "repeatable": true
+    },
+    "content": {
+      "type": "blocks",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "isPublished"
+            },
+            true
+          ]
+        }
+      }
     }
   }
 }

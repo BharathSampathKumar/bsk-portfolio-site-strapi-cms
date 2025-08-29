@@ -390,15 +390,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         maxLength: 50;
         minLength: 3;
       }>;
-    content: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NTc1NDg3OTksImp0aSI6IjFlNzFhZGYxLTZkODEtNGI4ZS1hNGIxLTgwN2E3OTI0NWNlMyIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiLCJzaCJdLCJ3aGl0ZUxhYmVsIjp0cnVlLCJsaWNlbnNlVHlwZSI6InRyaWFsIiwiZmVhdHVyZXMiOlsiKiJdLCJ2YyI6IjQ5N2NiOGVmIn0.TpIDAECZFVc9uly-ia-gct7R80CS1sUb75aiaf8x9LRSUoDHSxM10yt8L8lB4nH2PEbwHR6BMLcytyljCyB_pA';
-          output: 'HTML';
-          preset: 'standard';
-        }
-      >;
+    content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
